@@ -9,22 +9,26 @@
 
     <Page.Resources>
         <DataTemplate x:Key="ImageTextListCollectionTemplate">
-            <StackPanel Orientation="Horizontal" Width="500" Height="130">
-                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,10,0,0">
-                    <TextBlock Text="{Binding}" FontStyle="Normal" Foreground="White"
-                       Margin="10,0,0,0" Width="350" Height="30" TextTrimming="WordEllipsis" FontSize="25" />
+            <StackPanel Orientation="Horizontal" Width="500" Height="25">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,0,0,0">
+                    <TextBlock Text="{Binding}" FontStyle="Normal" Foreground="Black"
+                       Margin="0,0,0,0" Width="350" Height="20" TextTrimming="WordEllipsis" FontSize="15" />
                 </StackPanel>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox HorizontalAlignment="Left" Margin="65,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="35" Width="325" Name="MessageText"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="313,102,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+    <Grid Background="White">
+        <TextBox HorizontalAlignment="Left" Margin="35,215,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="171" Width="353" Name="MessageText" Foreground="Black" BorderBrush="Black" />
+        <Button Content="Send" HorizontalAlignment="Left" Margin="242,404,0,0" FontSize="30" VerticalAlignment="Top" Click="Button_Click" Foreground="Black" BorderBrush="Black" Height="74" Width="149" />
 
         <ListView x:Name="MessagesList" Width="852" 
+                  BorderBrush="Black"
           VerticalAlignment="Stretch" HorizontalAlignment="Left" 
-          CanReorderItems="False" CanDragItems="True" Background="Black"
-          ItemTemplate="{StaticResource ImageTextListCollectionTemplate}" Margin="514,0,0,0" ItemsSource="{Binding}" />
+          CanReorderItems="False" CanDragItems="True" Background="White"
+          ItemTemplate="{StaticResource ImageTextListCollectionTemplate}" 
+                  Margin="514,0,0,0" 
+                  ItemsSource="{Binding}" />
+        <Image HorizontalAlignment="Left" Height="136" Margin="35,32,0,0" VerticalAlignment="Top" Width="396" Source="images/DetMobileNet.png"/>
     </Grid>
 </Page>
